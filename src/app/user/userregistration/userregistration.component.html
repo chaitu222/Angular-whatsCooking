@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>loginpage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+
+
+<div class="container">
+      <form (ngSubmit)="registerUser()" #registrationForm="ngForm">
+        <h2 class="mb-6">User Registration</h2>
+
+        <!-- Firstname -->
+        <div class="mb-3">
+          <label for="firstname" class="form-label">Firstname</label>
+          <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="user.firstname" required>
+        </div>
+
+        <!-- Lastname -->
+        <div class="mb-3">
+          <label for="lastname" class="form-label">Lastname</label>
+          <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="user.lastname" required>
+        </div>
+
+        <!-- Username -->
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" name="username" [(ngModel)]="user.username" required>
+          
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" required email>
+          <div *ngIf="registrationForm.controls['email'].invalid && (registrationForm.controls['email'].dirty || registrationForm.controls['email'].touched)"
+          class="text-danger">
+          Enter a valid email address.
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" required>
+          Please enter password
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" [(ngModel)]="user.confirmPassword" required>
+          <div *ngIf="user.password !== user.confirmPassword && registrationForm.controls['confirmPassword'].dirty" class="text-danger">
+            Passwords do not match.
+          </div>
+        </div>
+
+        <!-- Gender -->
+        <div class="mb-3" id="gender">
+          <label for="gender" class="form-label">Who are you</label><br>
+          <select class="form-select" id="gender" name="gender" [(ngModel)]="user.gender" required>
+            <option value="" disabled></option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <button  type="submit" [disabled]="registrationForm.invalid">Register</button>
+      </form>
+    </div>
+
+
+
+

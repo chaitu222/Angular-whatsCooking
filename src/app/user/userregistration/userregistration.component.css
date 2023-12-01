@@ -1,0 +1,72 @@
+
+  .para {
+    padding: 50px 0;
+  }
+
+  .para strong {
+    color: #000000;
+    display: block;
+    margin-top: 10px;
+  }
+
+  .container {
+    backdrop-filter: blur(20px);
+    padding: 14px 20px;
+    border: 3px solid #007bff;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 80%;
+    margin-left: 60px;
+    
+  }
+
+
+  .form-label{
+    color: white;
+  }
+  form {
+  
+    padding: 10px;
+    width: 100%;
+   
+  }
+
+  h2 {
+    color: #fcf4f4;
+    text-align: center;
+  }
+
+  #gender{
+    text-align: center;
+  }
+  button{
+    margin: 0 auto;
+    display: block;
+
+  }
+  label {
+    color: #495057;
+  }
+
+  input,
+  select {
+    margin-bottom: 15px;
+  }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+
+  .text-danger {
+    color: #dc3545;
+  }
