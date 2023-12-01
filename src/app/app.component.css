@@ -1,0 +1,25 @@
+
+/* home */
+
+body{
+    background-image: url('../assets/images/mainbg.jpg');
+    height: 92vh;
+    width : 100vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: -24px
+}
+
+/* Navbar */
+
+.navbar{
+    background-color: rgb(23, 23, 23);
+    text-align: center;
+   
+}
+
+.items{
+
+    
+}
