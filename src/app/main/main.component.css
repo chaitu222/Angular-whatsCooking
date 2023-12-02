@@ -1,0 +1,31 @@
+body {
+    background-image: url('../../assets/images/mainbg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-box {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.box-container {
+    padding: 20px;
+    border: 3px solid #007bff;
+    margin-top: 60px;
+    border-radius: 20px;
+    backdrop-filter: blur(30px);
+    background-color: rgba(39, 39, 39, 0.218);
+    color: white;
+  }
+.mt-4{
+    text-align: center;
+}

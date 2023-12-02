@@ -10,13 +10,14 @@
   }
 
   .container {
+
     backdrop-filter: blur(20px);
     padding: 14px 20px;
     border: 3px solid #007bff;
     border-radius: 30px;
     cursor: pointer;
     width: 80%;
-    margin-left: 60px;
+    margin-left: 160px;
     
   }
 
@@ -25,8 +26,7 @@
     color: white;
   }
   form {
-  
-    padding: 10px;
+    padding: 1px;
     width: 100%;
    
   }
@@ -70,3 +70,15 @@
   .text-danger {
     color: #dc3545;
   }
+
+  body {
+    background-image: url('../../../assets/images/mainbg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

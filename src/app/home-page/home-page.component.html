@@ -9,11 +9,10 @@
     .box-container {
       padding: 20px;
       border: 3px solid #007bff;
-      margin-top: 60px;
       border-radius: 20px;
-      backdrop-filter:blur(30px);
+      backdrop-filter: blur(30px);
       background-color: rgba(39, 39, 39, 0.218);
-    
+      margin-top: 50px; /* Added margin-top to provide space between the container and the top */
     }
 
     .welcome-heading {
@@ -21,12 +20,25 @@
       margin-bottom: 20px;
     }
 
-    h1{
+    h1 {
       color: white;
     }
+
     h2 {
       color: #007bff;
       margin-top: 20px;
+    }
+
+    body {
+      background-image: url('../../../assets/images/homebg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Align items at the start (top) */
     }
 
     p {
@@ -35,24 +47,20 @@
     }
   </style>
 </head>
-
-
-
+<app-navbar></app-navbar>
+<body>
   <div class="container">
-    <div class="row">
-      
+    <div class="row justify-content-center align-items-start"> <!-- Added classes for alignment -->
+      <div class="col-sm-8"> <!-- Adjust the column size based on your layout -->
         <div class="box-container">
           <h1 class="welcome-heading">Welcome to What's Cooking</h1>
           <p>Explore thousands of recipes and cook like a pro!</p>
           <h2>“What’s Cooking?”</h2>
-          <p>It is a one-stop solution to find recipes that best match the ingredients in hand. “What’s
-            Cooking?” makes your life easier by helping you decide what to cook based on the time and ingredients in
-            hand. You no longer must surf various websites to find the “perfect” recipe.</p>
+          <p>It is a one-stop solution to find recipes that best match the ingredients in hand. “What’s Cooking?” makes your life easier by helping you decide what to cook based on the time and ingredients in hand. You no longer must surf various websites to find the “perfect” recipe.</p>
         </div>
       </div>
-    
+    </div>
   </div>
-
-
+</body>
 
 </html>

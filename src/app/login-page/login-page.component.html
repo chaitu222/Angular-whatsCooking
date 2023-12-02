@@ -5,33 +5,41 @@
   <title>Login Page</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
-   
     .container {
       margin-top: 50px;
     }
 
     .login-container {
-      padding: 20px;
+      padding: 60px; /* Increased padding for more space inside the container */
       border: 3px solid #007bff;
-      margin-top: 60px;
       border-radius: 20px;
-      backdrop-filter:blur(20px);
+      backdrop-filter: blur(20px);
       background-color: rgba(39, 39, 39, 0.218);
+      margin-left: 15px;
     }
 
     .login-form .form-group {
-      margin-bottom: 15px;
+      margin-bottom: 20px; /* Increased margin between form elements */
     }
 
     .login-form input[type="text"],
     .login-form input[type="password"] {
-      width: 100%;
+      width: 100%; 
       padding: 10px;
       border-radius: 3px;
       border: 1px solid #ccc;
     }
-    .loginbg{
-    margin-top: -50px;
+    
+    body {
+      background-image: url('../../../assets/images/mainbg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .login-form button[type="submit"] {
@@ -42,7 +50,7 @@
     }
   </style>
 </head>
-<div class="loginbg">
+<body>
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
@@ -55,11 +63,11 @@
             <div class="form-group">
               <input type="password" class="form-control" placeholder="Password" required>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" routerLink="/home" class="btn btn-primary" >Login</button>
           </form>
         </div>
       </div>
     </div>
   </div>
-</div>
+</body>
 </html>

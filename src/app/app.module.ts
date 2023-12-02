@@ -6,13 +6,17 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { FormsModule } from '@angular/forms';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { UserregistrationComponent } from './user/userregistration/userregistration.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     LoginPageComponent,
-    UserregistrationComponent
+    UserregistrationComponent,
+    NavbarComponent,
+    MainComponent
   ],
 
   imports: [
@@ -23,6 +27,6 @@ import { UserregistrationComponent } from './user/userregistration/userregistrat
 
   ],
   providers: [],
-  bootstrap: [ AppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
