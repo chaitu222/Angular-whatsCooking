@@ -11,7 +11,7 @@
 
     .login-container {
       padding: 60px; /* Increased padding for more space inside the container */
-      border: 3px solid #007bff;
+      border: 3px solid #59ff00;
       border-radius: 20px;
       backdrop-filter: blur(20px);
       background-color: rgba(39, 39, 39, 0.218);
@@ -55,23 +55,19 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="login-container">
-          <h2 class="text-center mb-4" style="color: white;">Admin Login</h2>
-          <div class="login-form">
-            <form (ngSubmit)="onLoginSubmit()">
+          <h2 class="text-center mb-4" style="color: white;">User Login</h2>
+          <form class="login-form">
             <div class="form-group">
-              <input type="text" name="username"  class="form-control" [(ngModel)]="username" required placeholder="Username" required>
+              <input type="text" class="form-control" placeholder="Username"   required>
             </div>
             <div class="form-group">
-              <input type="password" name="password" class="form-control"  [(ngModel)]="password" required placeholder="Password" required>
+              <input type="password" class="form-control" placeholder="Password" required>
             </div>
-            <button type="submit"  class="btn btn-primary" >Login</button>
+            <button type="submit" routerLink="/home" class="btn btn-primary" >Login</button>
           </form>
-        </div> 
         </div>
       </div>
     </div>
   </div>
 </body>
 </html>
-
-

@@ -28,4 +28,6 @@ body {
   }
 .mt-4{
     text-align: center;
+    display:block;
+     justify-content: space-between;
 }

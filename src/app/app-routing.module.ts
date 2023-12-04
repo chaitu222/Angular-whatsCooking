@@ -4,12 +4,25 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { UserregistrationComponent } from './user/userregistration/userregistration.component'; 
 import { MainComponent } from './main/main.component';
+import { UserLoginComponent } from './user-login/user-login.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { MyprofileComponent } from './myprofile/myprofile.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { ExploreComponent } from './explore/explore.component';
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
   { path: 'main', component: MainComponent},
   { path: 'home', component: HomePageComponent },
   { path: 'login', component: LoginPageComponent },
-  { path: 'userregistration', component: UserregistrationComponent }
+  { path: 'userregistration', component: UserregistrationComponent },
+  { path: 'feedback', component: FeedbackComponent },
+  { path: 'myprofile', component: MyprofileComponent },
+  { path: 'contactUs', component: ContactUsComponent },
+  { path: 'adminhome', component: AdminHomeComponent},
+  { path: 'explore', component: ExploreComponent},
+  { path: 'userLogin', component: UserLoginComponent }
+
 ];
 
 @NgModule({

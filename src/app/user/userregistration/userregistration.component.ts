@@ -7,7 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./userregistration.component.css']
 })
 export class UserregistrationComponent {
-    user = {
+  signupusers:any=[];  
+  
+  userobj = {
       firstname: '',
     lastname: '',
     username: '',
@@ -17,11 +19,32 @@ export class UserregistrationComponent {
     gender: '',
     };
 
-registerUser(): void {
-    
-console.log('User registered:', this.user);
-      
+
+  ngOnInit():void{ 
+    const localData=localStorage.getItem('signsignupusers');
+    if(localData !=null){
+      this.signupusers=JSON.parse(localData)
     }
-   
+  }
+  
+  onSignUp(){
+    this.signupusers.push(this.userobj);
+    localStorage.setItem('signupusers',JSON.stringify(this.signupusers));
+    this.userobj = {
+      firstname: '',
+    lastname: '',
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    gender: '',
+    };
+    }
+  
+registerUser(): void {
+
+console.log('User registered:', this.userobj);
+
+    }
 }
 

@@ -8,6 +8,14 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { UserregistrationComponent } from './user/userregistration/userregistration.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MainComponent } from './main/main.component';
+import { UserLoginComponent } from './user-login/user-login.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { MyprofileComponent } from './myprofile/myprofile.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { ExploreComponent } from './explore/explore.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,13 +24,21 @@ import { MainComponent } from './main/main.component';
     LoginPageComponent,
     UserregistrationComponent,
     NavbarComponent,
-    MainComponent
+    MainComponent,
+    UserLoginComponent,
+    ContactUsComponent,
+    FeedbackComponent,
+    MyprofileComponent,
+    AdminHomeComponent,
+    ExploreComponent
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    NgbModule,
+    HttpClientModule,
 
 
   ],

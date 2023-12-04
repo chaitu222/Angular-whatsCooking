@@ -7,26 +7,73 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
        
-      
+       .dropdown {
+            position: relative;
+            display: inline-block;
+            padding: 10px;
+            margin: 30px;
+        }
+    
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9c6;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            backdrop-filter: blur(40%);
+            border-radius: 15px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
 </head>
 
 <body>
+
+    
     <div class="container">
         <div class="row">
 
             <div class="box-container">
-                <h1 class="welcome-heading">Welcome to What's Cooking</h1>
+
+                <h1 style="color: rgb(0, 106, 255) ; text-align: center;"  class="welcome-heading">Welcome to What's Cooking</h1>       
+<h2>Discover, Create, and Share Culinary Delights!</h2>
+<p>
+    Unleash your inner chef and join "What's Cooking" today! Registration is quick and free. Gain access to a world of culinary delights, cooking inspiration, and a community of passionate food lovers.
+</p>
+
+<p>
+    Ready to savor the flavors of life? Let's get cooking!
+    <br>
+    <a routerLink="/userregistration">Sign Up Now</a> to embark on your culinary adventure.
+</p>
+               
                 <p>Explore thousands of recipes and cook like a pro!</p>
-                <h2 style="color: rgb(0, 128, 255);">“What’s Cooking?”</h2>
-                <p>It is a one-stop solution to find recipes that best match the ingredients in hand. “What’s
-                    Cooking?” makes your life easier by helping you decide what to cook based on the time and
-                    ingredients in
-                    hand. You no longer must surf various websites to find the “perfect” recipe.</p>
             </div>
         </div>
         <div class="mt-4">
-            <a routerLink="/login" class="btn btn-primary mr-3">Login</a>
+
+            <div class="dropdown">
+            <button  class="btn btn-primary mr-3">Login</button>
+            <div class="dropdown-content">
+                <a routerLink="/login">Admin Login</a>
+                <a routerLink="/userLogin" >User Login</a>
+            </div>
+        </div>
             <a routerLink="/userregistration" class="btn btn-success">Register</a>
         </div>
     </div>
