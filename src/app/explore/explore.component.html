@@ -38,7 +38,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height:auto;
+    height: auto;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -149,15 +149,14 @@
   }
 
   .preparation-heading {
-  font-size: 1.2rem;
-  margin-top: 20px;
-}
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
 
-.preparation-steps {
-  list-style-type: decimal;
-  padding-left: 20px;
-}
-
+  .preparation-steps {
+    list-style-type: decimal;
+    padding-left: 20px;
+  }
 </style>
 <app-navbar></app-navbar>
 
@@ -192,7 +191,7 @@
         <div class="card">
           <img src="../../assets/images/fooditems/panner.jpg" class="card-img-top" alt="Food 2">
           <div class="card-body">
-            <h5 class="card-title">Panner Butter Masala</h5>
+            <h5 class="card-title">Panner Butter </h5>
           </div>
         </div>
         <div class="card">
@@ -229,20 +228,38 @@
       </div>
 
       <!-- Display Selected Recipe Details -->
-      <div *ngIf="selectedRecipe" class="selected-recipe-container">
+      <!-- <div *ngIf="selectedRecipe" class="selected-recipe-container">
         <button (click)="goBackToSearchResults()" class="back-button">Back to Search Results</button>
         <h3 class="recipe-heading">{{ selectedRecipe.label }}</h3>
         <img [src]="selectedRecipe.image" alt="{{ selectedRecipe.label }}" class="recipe-image" style="align-content: center;">
         <p class="recipe-description">Ingredients: {{ selectedRecipe.ingredientLines.join(', ') }}</p>
-        <a href="https://food52.com/recipes">for more details</a>
-   
-        </div>
-      <!-- Error Section -->
-      <ng-template #errorSection>
-        <div class="error-message" style="text-align: center;">Error fetching recipes. Please try again.</div>
-      </ng-template>
+        <a href="https://food52.com/recipes">for more details</a> -->
+
+
+      <div *ngIf="selectedRecipe" class="selected-recipe-container">
+        <button (click)="goBackToSearchResults()" class="back-button">Back to Search Results</button>
+        <h3 class="recipe-heading">{{ selectedRecipe.label }}</h3>
+        <img [src]="selectedRecipe.image" alt="{{ selectedRecipe.label }}" class="recipe-image">
+        <p class="recipe-description">Ingredients: {{ selectedRecipe.ingredientLines.join(', ') }}</p>
+        <a href="{{ selectedRecipe.url }}" target="_blank" rel="noopener noreferrer">for more details</a> <br><br>
+        
+        <p>Likes: {{ selectedRecipe.likes }}</p>
+        <p>Dislikes: {{ selectedRecipe.dislikes }}</p>
+
+        <!-- Like and Dislike buttons -->
+        <div class="justify-content-center">
+        <button class="btn-primary" (click)="likeRecipe(selectedRecipe)">Like</button>
+        <button class="btn-danger" style="margin-left: 30px;" (click)="dislikeRecipe(selectedRecipe)">Dislike</button>
+      </div>
+        
+      </div>
     </div>
+    <!-- Error Section -->
+    <ng-template #errorSection>
+      <div class="error-message" style="text-align: center;">Error fetching recipes. Please try again.</div>
+    </ng-template>
   </div>
+  
 </body>
 
 </html>
