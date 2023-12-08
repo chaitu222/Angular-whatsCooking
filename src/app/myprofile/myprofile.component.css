@@ -23,6 +23,17 @@ body {
     margin-right: 300px;
 }
 
+.background{
+    background-image: url('../../assets/images/profilebg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+}
 
 .profile-form .form-group {
     margin-bottom: 20px;
@@ -70,4 +81,8 @@ body {
 /* Style for the hidden file input */
 input[type="file"] {
     display: none;
+}
+
+p{
+    color: white;
 }

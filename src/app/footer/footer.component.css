@@ -1,0 +1,28 @@
+/* footer.component.scss */
+
+.footer-container {
+    background-color: #1b1b1b;
+    color: #fff;
+    padding: 20px;
+    margin-top: 100px;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer-section {
+    width: 30%;
+  }
+  
+  .title {
+    font-weight: bold;
+    font-size: 18px;
+    color: yellow;
+  }
+  
+  p {
+    margin-bottom: 10px;
+  }
+  

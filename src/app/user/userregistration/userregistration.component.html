@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>loginpage</title>
@@ -10,56 +9,73 @@
 </head>
 <body>
 <div class="container">
-      <form (ngSubmit)="registerUser()" #registrationForm="ngForm">
-        <h2 class="mb-6">User Registration</h2>
-        <!-- Username -->
-        <div class="mb-3">
-          <label for="username" class="form-label"></label>
-          <input type="text" placeholder="Username"   class="form-control" id="username" name="username" [(ngModel)]="userobj.username" required>
-          
-        </div>
-
-        <!-- Email -->
-        <div class="mb-3">
-          <label for="email" class="form-label"></label>
-          <input type="email" placeholder="Email"  class="form-control" id="email" name="email" [(ngModel)]="userobj.email" required email>
-          <div *ngIf="registrationForm.controls['email'].invalid && (registrationForm.controls['email'].dirty || registrationForm.controls['email'].touched)"
-          class="text-danger">
-          Enter a valid email address.
-          </div>
-        </div>
-
-        <!-- Password -->
-        <div class="mb-3">
-          <label for="password" class="form-label"></label>
-          <input type="password"  placeholder="Password"  class="form-control" id="password" name="password" [(ngModel)]="userobj.password" required>
-          
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mb-3">
-          <label for="confirmPassword" class="form-label"></label>
-          <input type="password"  placeholder="Confirm Password"  class="form-control" id="confirmPassword" name="confirmPassword" [(ngModel)]="userobj.confirmPassword" required>
-          <div *ngIf="userobj.password !== userobj.confirmPassword && registrationForm.controls['confirmPassword'].dirty" class="text-danger">
-            Passwords do not match.
-          </div>
-        </div>
-
-        <!-- Gender -->
-        <div class="mb-3" id="gender">
-          <label for="gender" class="form-label">Who are you</label><br>
-          <select class="form-select"  id="gender" name="gender" [(ngModel)]="userobj.gender" required>
-            <option value="" disabled></option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-
-        <button  type="submit" [disabled]="registrationForm.invalid" (click)="onSignUp()">Register</button>
-      </form>
+      <!-- registration.component.html -->
+ 
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" formControlName="firstName" required>
+    <div *ngIf="isFieldInvalid('firstName') && isFieldTouched('firstName')">
+      Please enter a valid first name.
     </div>
+  </div>
+ 
+  <div>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" formControlName="lastName"  placeholder="lastName"required>
+    <div *ngIf="isFieldInvalid('lastName') && isFieldTouched('lastName')">
+      Please enter a valid last name.
+    </div>
+  </div>
+ 
+  <div>
+    <label for="userName">Username:</label>
+    <input type="text" id="userName" formControlName="userName" required>
+    <div *ngIf="isFieldInvalid('userName') && isFieldTouched('userName')">
+      Please enter a valid username.
+    </div>
+  </div>
+ 
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="email" required>
+    <div *ngIf="isFieldInvalid('email') && isFieldTouched('email')">
+      Please enter a valid email address.
+    </div>
+  </div>
+ 
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password" required>
+    <div *ngIf="isFieldInvalid('password') && isFieldTouched('password')">
+      Password must be at least 8 characters long.
+    </div>
+  </div>
+ 
+  <div>
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" formControlName="confirmPassword" required>
+    <div *ngIf="isFieldInvalid('confirmPassword') && isFieldTouched('confirmPassword')">
+      Passwords do not match.
+    </div>
+  </div>
+ 
+  <div>
+    <label for="gender">Gender:</label>
+    <select id="gender" formControlName="gender" required>
+      <option value="" disabled>Select your gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+    <div *ngIf="isFieldInvalid('gender') && isFieldTouched('gender')">
+      Please select your gender.
+    </div>
+  </div>
+ 
+  <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+</form>
+ 
+</div>
+ 
   </body>
-
-
-

@@ -8,7 +8,7 @@
     .container {
       margin-top: 50px;
     }
-
+ 
     .login-container {
       padding: 60px; /* Increased padding for more space inside the container */
       border: 3px solid #59ff00;
@@ -17,19 +17,19 @@
       background-color: rgba(39, 39, 39, 0.218);
       margin-left: 15px;
     }
-
+ 
     .login-form .form-group {
       margin-bottom: 20px; /* Increased margin between form elements */
     }
-
+ 
     .login-form input[type="text"],
     .login-form input[type="password"] {
-      width: 100%; 
+      width: 100%;
       padding: 10px;
       border-radius: 3px;
       border: 1px solid #ccc;
     }
-    
+   
     body {
       background-image: url('../../../assets/images/mainbg.jpg');
       background-size: cover;
@@ -41,7 +41,7 @@
       justify-content: center;
       align-items: center;
     }
-
+ 
     .login-form button[type="submit"] {
       width: 100%;
       padding: 10px;
@@ -51,19 +51,29 @@
   </style>
 </head>
 <body>
+ 
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="login-container">
           <h2 class="text-center mb-4" style="color: white;">User Login</h2>
-          <form class="login-form">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Username"   required>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" id="email" formControlName="email" required>
+              <div *ngIf="isFieldInvalid('email') && isFieldTouched('email')">
+                Please enter a valid email address.
+              </div>
             </div>
-            <div class="form-group">
-              <input type="password" class="form-control" placeholder="Password" required>
+         
+            <div>
+              <label for="password">Password:</label>
+              <input type="password" id="password" formControlName="password" required>
+              <div *ngIf="isFieldInvalid('password') && isFieldTouched('password')">
+                Password must be at least 8 characters long.
+              </div>
             </div>
-            <button type="submit" routerLink="/home" class="btn btn-primary" >Login</button>
+            <button type="submit"  class="btn btn-primary" >Login</button>
           </form>
         </div>
       </div>

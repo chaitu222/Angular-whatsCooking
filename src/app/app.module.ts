@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { UserregistrationComponent } from './user/userregistration/userregistration.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -16,6 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { ExploreComponent } from './explore/explore.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { HttpClientModule } from '@angular/common/http';
     FeedbackComponent,
     MyprofileComponent,
     AdminHomeComponent,
-    ExploreComponent
+    ExploreComponent,
+    FooterComponent,
+   
   ],
 
   imports: [
@@ -39,6 +42,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     NgbModule,
     HttpClientModule,
+    ReactiveFormsModule
+    
 
 
   ],

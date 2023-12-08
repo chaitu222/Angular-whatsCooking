@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -45,4 +45,146 @@
 </body>
 
 </html>
+ -->
 
+ <!-- user-profile.component.html -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .container {
+      margin-top: 50px;
+    }
+ 
+    body {
+      background-image: url('../../../assets/images/homebg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Align items at the start (top) */
+    }
+ 
+    .form-container {
+      padding: 60px;
+      border: 3px solid #007bff;
+      border-radius: 20px;
+      backdrop-filter: blur(20px);
+      background-color: rgba(39, 39, 39, 0.218);
+      margin-left: 15px;
+      margin-bottom: 20px;
+      margin-top: 40px;
+      color: white;
+    }
+ 
+    .button {
+      margin: 3px;
+      cursor: pointer;
+      color: #007bff;
+      text-decoration: underline;
+    }
+ 
+    form label {
+      margin-bottom: 10px;
+    }
+ 
+    form input[type="text"],
+    form input[type="email"],
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      background-color: rgba(255, 255, 255, 0.5);
+      color: #000;
+    }
+ 
+    form button[type="button"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<app-navbar></app-navbar>
+<body class="background">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="profile-container">
+          <!-- Display user information in view mode -->
+          <form *ngIf="!isEditMode">
+            <h2 class="text-center">User Profile</h2>
+                <div class="avatar-container">
+                    <img src="../../assets/images/userDp.jpg" alt="Avatar" class="avatar">
+                </div>
+            
+            <p><strong>Name:</strong> {{ user.name }}
+              <span class="button" (click)="deleteUserField('Name')">Delete</span>
+            </p>
+            <p><strong>Username:</strong> {{ user.username }}
+              <span class="button" (click)="deleteUserField('Username')">Delete</span>
+            </p>
+            <p><strong>Email:</strong> {{ user.email }}
+              <span class="button" (click)="deleteUserField('Email')">Delete</span>
+            </p>
+            <p><strong>Date of Birth:</strong> {{ user.dob }}
+              <span class="button" (click)="deleteUserField('Date of Birth')">Delete</span>
+            </p>
+            <p><strong>Gender:</strong> {{ user.gender }}
+              <span class="button" (click)="deleteUserField('Gender')">Delete</span>
+            </p>
+            <p><strong>Description:</strong> {{ user.description }}
+              <span class="button" (click)="deleteUserField('Description')">Delete</span>
+            </p>
+ 
+            <!-- Buttons to enter edit mode, delete user -->
+            <button type="button" class="button" (click)="enterEditMode()">Edit</button>
+          </form>
+ 
+          <!-- Display form in edit mode -->
+          <form *ngIf="isEditMode">
+            <label for="name">Name:</label>
+            <input type="text" id="name" [(ngModel)]="user.name" name="name" required>
+ 
+            <label for="username">Username:</label>
+            <input type="text" id="username" [(ngModel)]="user.username" name="username" [readonly]="!isUsernameEditable" required>
+ 
+            <label for="email">Email:</label>
+            <input type="email" id="email" [(ngModel)]="user.email" name="email" [readonly]="!isEmailEditable" required>
+ 
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" [(ngModel)]="user.dob" name="dob" required>
+ 
+            <label for="gender">Gender:</label>
+            <select id="gender" [(ngModel)]="user.gender" name="gender" required>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+ 
+            <label for="description">Description:</label>
+            <textarea id="description" [(ngModel)]="user.description" name="description"></textarea>
+ 
+            <!-- Buttons to save changes, cancel edit, delete user -->
+            <button type="button" class="button" (click)="saveChanges()">Save Changes</button>
+            <button type="button" class="button" (click)="cancelEdit()">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

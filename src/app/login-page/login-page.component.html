@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Login Page</title>
@@ -10,7 +11,8 @@
     }
 
     .login-container {
-      padding: 60px; /* Increased padding for more space inside the container */
+      padding: 60px;
+      /* Increased padding for more space inside the container */
       border: 3px solid #007bff;
       border-radius: 20px;
       backdrop-filter: blur(20px);
@@ -19,17 +21,18 @@
     }
 
     .login-form .form-group {
-      margin-bottom: 20px; /* Increased margin between form elements */
+      margin-bottom: 20px;
+      /* Increased margin between form elements */
     }
 
     .login-form input[type="text"],
     .login-form input[type="password"] {
-      width: 100%; 
+      width: 100%;
       padding: 10px;
       border-radius: 3px;
       border: 1px solid #ccc;
     }
-    
+
     body {
       background-image: url('../../../assets/images/mainbg.jpg');
       background-size: cover;
@@ -50,6 +53,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="row">
@@ -58,20 +62,22 @@
           <h2 class="text-center mb-4" style="color: white;">Admin Login</h2>
           <div class="login-form">
             <form (ngSubmit)="onLoginSubmit()">
-            <div class="form-group">
-              <input type="text" name="username"  class="form-control" [(ngModel)]="username" required placeholder="Username" required>
-            </div>
-            <div class="form-group">
-              <input type="password" name="password" class="form-control"  [(ngModel)]="password" required placeholder="Password" required>
-            </div>
-            <button type="submit"  class="btn btn-primary" >Login</button>
-          </form>
-        </div> 
+              <div class="form-group">
+                <input type="text" name="username" class="form-control" [(ngModel)]="username" placeholder="Username"
+                  required>
+              </div>
+              <div class="form-group">
+                <input type="password" name="password" class="form-control" [(ngModel)]="password"
+                  placeholder="Password" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
 </body>
+
 </html>
-
-
