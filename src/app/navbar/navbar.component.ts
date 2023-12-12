@@ -12,11 +12,7 @@ export class NavbarComponent {
   constructor(private router: Router) {}
 
   logout(): void {
-    // Perform logout operations if any
-    // For example, clearing user session, etc.
-    // Then navigate back to the welcome page or login page
     this.router.navigate(['/welcome']);
-    // Emitting the logout event
     this.logoutEvent.emit();
   }
 }

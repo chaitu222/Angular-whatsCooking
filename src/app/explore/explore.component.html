@@ -8,139 +8,7 @@
 
 </head>
 <style>
-  .box-container {
-    padding: 20px;
-    border: 3px solid #007bff;
-    border-radius: 20px;
-    backdrop-filter: blur(30px);
-    background-color: rgba(39, 39, 39, 0.218);
-    margin-top: 50px;
-    /* Added margin-top to provide space between the container and the top */
-  }
-
-  .welcome-heading {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-
-  h1 {
-    color: white;
-  }
-
-  h2 {
-    color: #007bff;
-    margin-top: 20px;
-  }
-
-  body {
-    /* background-image: url('../../assets/images/homebg.jpg'); */
-    background: linear-gradient(45deg, #138ee0, #15355f);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: auto;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    /* Align items at the start (top) */
-    backdrop-filter: blur(20%);
-  }
-
-  p {
-    line-height: 1.6;
-    color: white;
-  }
-
-  .card-container {
-    overflow-x: scroll;
-    white-space: nowrap;
-    margin-top: -100px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-
-  }
-
-  .container {
-
-    overflow: hidden;
-    overflow-y: auto;
-  }
-
-  .container mt-4 {
-    margin-top: 60px;
-  }
-
-  .card {
-    display: inline-block;
-    width: 200px;
-    margin-right: 35px;
-  }
-
-  .search-results-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-  }
-
-  .results-heading {
-    font-size: 1.5rem;
-    color: #007bff;
-  }
-
-  .results-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .result-item {
-    margin-bottom: 10px;
-    /* Add some spacing between items */
-    padding: 10px;
-    /* Add padding to each item */
-    background-color: #f5f5f5;
-    /* Set a background color for each item */
-    border-radius: 5px;
-    /* Add rounded corners to each item */
-  }
-
-  .selected-recipe-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-  }
-
-  .back-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .recipe-heading {
-    font-size: 1.5rem;
-    color: #007bff;
-  }
-
-  .recipe-description {
-    color: #333;
-  }
-
-  .preparation-heading {
-    font-size: 1.2rem;
-    margin-top: 20px;
-  }
-
-  .preparation-steps {
-    list-style-type: decimal;
-    padding-left: 20px;
-  }
+  
 </style>
 <app-navbar></app-navbar>
 
@@ -225,21 +93,22 @@
         <h3 class="recipe-heading">{{ selectedRecipe.label }}</h3>
         <img [src]="selectedRecipe.image" alt="{{ selectedRecipe.label }}" class="recipe-image">
         <p class="recipe-description">Ingredients: {{ selectedRecipe.ingredientLines.join(', ') }}</p>
+        <p class="recipe-description">Calories: {{ selectedRecipe.calories }} kcal</p>
         <a href="{{ selectedRecipe.url }}" target="_blank" rel="noopener noreferrer">for more details</a> <br><br>
-        
-        <p>Likes: {{ selectedRecipe.likes }}</p>
-        <p>Dislikes: {{ selectedRecipe.dislikes }}</p>
 
-        <!-- Like and Dislike buttons -->
+
+        <!-- for the like and Dislike buttons -->
         <div class="justify-content-center">
-        <button class="btn-primary" (click)="likeRecipe(selectedRecipe)">Like</button>
-        <button class="btn-danger" style="margin-left: 30px;" (click)="dislikeRecipe(selectedRecipe)">Dislike</button>
-      </div>
-        
+          <button class="btn btn-primary" (click)="toggleVote(selectedRecipe, 'like')">Like ({{ selectedRecipe.likes
+            }})</button>
+          <button class="btn btn-danger" style="margin-left: 30px;"
+            (click)="toggleVote(selectedRecipe, 'dislike')">Dislike ({{ selectedRecipe.dislikes }})</button>
+        </div>
+
       </div>
     </div>
   </div>
-  
+
 </body>
 
 </html>

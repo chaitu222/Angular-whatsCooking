@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Login Page</title>
@@ -8,20 +9,22 @@
     .container {
       margin-top: 50px;
     }
- 
+
     .login-container {
-      padding: 60px; /* Increased padding for more space inside the container */
-      border: 3px solid #59ff00;
+      padding: 60px;
+      /* Increased padding for more space inside the container */
+      border: 3px solid hsl(125, 100%, 50%);
       border-radius: 20px;
       backdrop-filter: blur(20px);
       background-color: rgba(39, 39, 39, 0.218);
       margin-left: 15px;
     }
- 
+
     .login-form .form-group {
-      margin-bottom: 20px; /* Increased margin between form elements */
+      margin-bottom: 20px;
+      /* Increased margin between form elements */
     }
- 
+
     .login-form input[type="text"],
     .login-form input[type="password"] {
       width: 100%;
@@ -29,7 +32,7 @@
       border-radius: 3px;
       border: 1px solid #ccc;
     }
-   
+
     body {
       background-image: url('../../../assets/images/mainbg.jpg');
       background-size: cover;
@@ -41,7 +44,11 @@
       justify-content: center;
       align-items: center;
     }
- 
+
+    label {
+      color: white;
+    }
+
     .login-form button[type="submit"] {
       width: 100%;
       padding: 10px;
@@ -50,34 +57,37 @@
     }
   </style>
 </head>
+
 <body>
- 
+
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="login-container">
           <h2 class="text-center mb-4" style="color: white;">User Login</h2>
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <div>
-              <label for="email">Email:</label>
-              <input type="email" id="email" formControlName="email" required>
-              <div *ngIf="isFieldInvalid('email') && isFieldTouched('email')">
+            <div class="form-group">
+              <label for="email"></label>
+              <input type="email" id="email" class="form-control" formControlName="email" required>
+              <div *ngIf="isFieldInvalid('email') && isFieldTouched('email')" style="color: rgb(214, 0, 0);">
                 Please enter a valid email address.
               </div>
             </div>
-         
-            <div>
-              <label for="password">Password:</label>
-              <input type="password" id="password" formControlName="password" required>
-              <div *ngIf="isFieldInvalid('password') && isFieldTouched('password')">
+
+            <div class="form-group">
+              <label for="password"></label>
+              <input type="password" id="password" class="form-control" formControlName="password" required>
+              <div *ngIf="isFieldInvalid('password') && isFieldTouched('password')" style="color: rgb(214, 0, 0);">
                 Password must be at least 8 characters long.
-              </div>
+              </div><br>
             </div>
-            <button type="submit"  class="btn btn-primary" >Login</button>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            <a [routerLink]="['/reset']">Reset Password</a>
           </form>
         </div>
       </div>
     </div>
   </div>
 </body>
+
 </html>

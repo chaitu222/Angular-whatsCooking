@@ -17,6 +17,8 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { ExploreComponent } from './explore/explore.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { FooterComponent } from './footer/footer.component';
     AdminHomeComponent,
     ExploreComponent,
     FooterComponent,
+    AdminDashboardComponent,
+    ResetpasswordComponent,
    
   ],
 

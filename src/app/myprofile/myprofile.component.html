@@ -57,7 +57,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
     .container {
-      margin-top: 50px;
+      margin-top: 90px;
     }
  
     body {
@@ -124,7 +124,7 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="profile-container">
-          <!-- Display user information in view mode -->
+
           <form *ngIf="!isEditMode">
             <h2 class="text-center">User Profile</h2>
                 <div class="avatar-container">
@@ -137,9 +137,7 @@
             <p><strong>Username:</strong> {{ user.username }}
               <span class="button" (click)="deleteUserField('Username')">Delete</span>
             </p>
-            <p><strong>Email:</strong> {{ user.email }}
-              <span class="button" (click)="deleteUserField('Email')">Delete</span>
-            </p>
+
             <p><strong>Date of Birth:</strong> {{ user.dob }}
               <span class="button" (click)="deleteUserField('Date of Birth')">Delete</span>
             </p>
@@ -161,9 +159,7 @@
  
             <label for="username">Username:</label>
             <input type="text" id="username" [(ngModel)]="user.username" name="username" [readonly]="!isUsernameEditable" required>
- 
-            <label for="email">Email:</label>
-            <input type="email" id="email" [(ngModel)]="user.email" name="email" [readonly]="!isEmailEditable" required>
+
  
             <label for="dob">Date of Birth:</label>
             <input type="date" id="dob" [(ngModel)]="user.dob" name="dob" required>

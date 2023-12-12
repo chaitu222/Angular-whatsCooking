@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { RecipeService } from '../recipe.service';
 import { Recipe } from './explore.module';
-
+import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-explore',
   templateUrl: './explore.component.html',
@@ -12,8 +12,9 @@ export class ExploreComponent {
   searchQuery: string = '';
   recipes: Recipe[] = [];
   selectedRecipe: Recipe | null = null;
+  
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService, private cdr: ChangeDetectorRef) { }
 
   search(): void {
     this.selectedRecipe = null; // Reset selected recipe when performing a new search
@@ -39,17 +40,21 @@ export class ExploreComponent {
   }
 
   // Increment likes for the selected recipe
-  likeRecipe(recipe: Recipe): void {
-    recipe.likes++;
-  }
+  toggleVote(recipe: Recipe, voteType: 'like' | 'dislike'): void {
+    if (!recipe.voteType) {
+      // No vote yet, increment the selected vote type
+      recipe[voteType === 'like' ? 'likes' : 'dislikes']++;
+      recipe.voteType = voteType;
+    } else if (recipe.voteType !== voteType) {
+      recipe[recipe.voteType === 'like' ? 'likes' : 'dislikes']--;
+      recipe[voteType === 'like' ? 'likes' : 'dislikes']++;
+      recipe.voteType = voteType;
+    } else {
+    }
 
-  // Increment dislikes for the selected recipe
-  dislikeRecipe(recipe: Recipe): void {
-    recipe.dislikes++;
+    this.cdr.detectChanges();
   }
-
-  // Function to go back to the search results
   goBackToSearchResults(): void {
-    this.selectedRecipe = null; // Reset selected recipe to show search results
+    this.selectedRecipe = null; 
   }
 }

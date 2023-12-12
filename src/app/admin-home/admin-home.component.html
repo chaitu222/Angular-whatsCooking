@@ -7,62 +7,6 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   
 </head>
-<style>
-  .box-container {
-    padding: 20px;
-    border: 3px solid #007bff;
-    border-radius: 20px;
-    backdrop-filter: blur(30px);
-    background-color: rgba(39, 39, 39, 0.218);
-    margin-top: 50px; /* Added margin-top to provide space between the container and the top */
-  }
-
-  .welcome-heading {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-
-  h1 {
-    color: white;
-  }
-
-  h2 {
-    color: #007bff;
-    margin-top: 20px;
-  }
-
-  body {
-    background-image: url('../../assets/images/homebg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Align items at the start (top) */
-  }
-
-  p {
-    line-height: 1.6;
-    color: white;
-  }
-  .card-container {
-    overflow-x: scroll; 
-    white-space: nowrap; 
-    margin-top: 80px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-     
-  }
-  
-  .card {
-    display: inline-block; /* Display cards in a row */
-    width: 200px; /* Set a fixed width for each card */
-    margin-right: 35px;
-    /* Add some space between cards */
-  }
-</style>
 <app-navbar></app-navbar>
 <body>
   <div class="container">
@@ -75,8 +19,8 @@
           <p>It is a one-stop solution to find recipes that best match the ingredients in hand. “What’s Cooking?” makes your life easier by helping you decide what to cook based on the time and ingredients in hand. You no longer must surf various websites to find the “perfect” recipe.</p>
           <a routerLink="/explore" class="btn btn-success">Click here to Explore</a>     
    </div>
-       
-        
+   <button class="btn btn-primary" style="margin-left: 43%;" [routerLink]="['/admindashboard']" >Add a Recipe</button>
+
           <!-- Horizontal scrolling cards -->
           <div class="card-container">
             <div class="card">

@@ -43,6 +43,7 @@ export class UserregistrationComponent {
         },
         (error) => {
           console.error('Registration failed:', error);
+          alert('Registration failed ')
           // Handle error, e.g., display error message to the user
         }
       );

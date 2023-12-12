@@ -6,20 +6,19 @@
     <title>Food Recipes</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-       
-       .dropdown {
+        .dropdown {
             position: relative;
             display: inline-block;
             padding: 10px;
             margin: 30px;
         }
-    
+
         .dropdown-content {
             display: none;
             position: absolute;
             background-color: #f9f9f9c6;
             min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             z-index: 1;
             backdrop-filter: blur(40%);
             border-radius: 15px;
@@ -44,36 +43,38 @@
 
 <body>
 
-    
+
     <div class="container">
         <div class="row">
 
             <div class="box-container">
 
-                <h1 style="color: rgb(0, 106, 255) ; text-align: center;"  class="welcome-heading">Welcome to What's Cooking</h1>       
-<h2>Discover, Create, and Share Culinary Delights!</h2>
-<p>
-    Unleash your inner chef and join "What's Cooking" today! Registration is quick and free. Gain access to a world of culinary delights, cooking inspiration, and a community of passionate food lovers.
-</p>
+                <h1 style="color: rgb(0, 106, 255) ; text-align: center;" class="welcome-heading">Welcome to What's
+                    Cooking</h1>
+                <h2>Discover, Create, and Share Culinary Delights!</h2>
+                <p>
+                    Unleash your inner chef and join "What's Cooking" today! Registration is quick and free. Gain access
+                    to a world of culinary delights, cooking inspiration, and a community of passionate food lovers.
+                </p>
 
-<p>
-    Ready to savor the flavors of life? Let's get cooking!
-    <br>
-    <a routerLink="/userregistration">Sign Up Now</a> to embark on your culinary adventure.
-</p>
-               
+                <p>
+                    Ready to savor the flavors of life? Let's get cooking!
+                    <br>
+                    <a routerLink="/userregistration">Sign Up Now</a> to embark on your culinary adventure.
+                </p>
+
                 <p>Explore thousands of recipes and cook like a pro!</p>
             </div>
         </div>
         <div class="mt-4">
 
             <div class="dropdown">
-            <button  class="btn btn-primary mr-3">Login</button>
-            <div class="dropdown-content">
-                <a routerLink="/login">Admin Login</a>
-                <a routerLink="/userLogin" >User Login</a>
+                <button class="btn btn-primary mr-3">Login</button>
+                <div class="dropdown-content">
+                    <a routerLink="/login">Admin Login</a>
+                    <a routerLink="/userLogin">User Login</a>
+                </div>
             </div>
-        </div>
             <a routerLink="/userregistration" class="btn btn-success">Register</a>
         </div>
     </div>

@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RecipeService {
-  private appId = '8fab9355'; // Replace with your Edamam Application ID
-  private appKey = 'fcc166976523d99bbba23e757d18a6d8'; // Replace with your Edamam Application Key
-  private apiUrl = 'https://api.edamam.com/search'; // Replace with the Edamam API endpoint
+  private appId = '497b3aef'; 
+  private appKey = '5f9134094bf991abcd33ca86ac8ac16d'; 
+  private apiUrl = 'https://api.edamam.com/search'; //endpoint dont change
 
   constructor(private http: HttpClient) {}
 

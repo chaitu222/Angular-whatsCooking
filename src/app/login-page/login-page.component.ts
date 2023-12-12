@@ -17,10 +17,10 @@ export class LoginPageComponent {
     const predefinedPassword = '12345';
 
     if (this.username.trim() === predefinedUsername && this.password === predefinedPassword) {
-      // Successful login - navigate to the home page
-      this.router.navigate(['/adminhome']);
+      
+      this.router.navigate(['/admindashboard']);
     } else {
-      // Failed login - show an error message or handle accordingly
+     // if invalid details
       alert('Invalid credentials. Please try again.');
     }
   }

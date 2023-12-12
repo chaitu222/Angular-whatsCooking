@@ -60,7 +60,6 @@ export class MyprofileComponent {
   userFields = [
     { key: 'name', label: 'Name' },
     { key: 'username', label: 'Username' },
-    { key: 'email', label: 'Email' },
     { key: 'dob', label: 'Date of Birth' },
     { key: 'gender', label: 'Gender' },
     { key: 'description', label: 'Description' }
@@ -68,7 +67,6 @@ export class MyprofileComponent {
   originalUser = {
     name: 'pavan',
     username: 'Pavan123',
-    email: 'pavan@gmail.com',
     dob: '11/02/2003',
     gender: 'male',
     description: 'How are you'
@@ -101,7 +99,8 @@ export class MyprofileComponent {
       } else {
         this.userService.addUser(this.user).subscribe(
           (newUser) => {
-            console.log('User added:', newUser);
+            console.log('User Updated:', newUser);
+            alert('User Updated sucessfully');
             this.originalUser = { ...this.user };
             this.isEditMode = false;
           },
@@ -121,18 +120,8 @@ export class MyprofileComponent {
   deleteUserField(field: string) {
     const confirmDelete = window.confirm(`Are you sure you want to delete the ${field}?`);
     if (confirmDelete) {
-      // Implement your deletion logic here
-      // For example, you can set the field to an empty string
       this.user[field.toLowerCase()] = '';
     }
   }
- 
-  // // Toggle the editability of username and email
-  // toggleEditability(field: string) {
-  //   if (field === 'username') {
-  //     this.isUsernameEditable = !this.isUsernameEditable;
-  //   } else if (field === 'email') {
-  //     this.isEmailEditable = !this.isEmailEditable;
-  //   }
-  // }
+
 }

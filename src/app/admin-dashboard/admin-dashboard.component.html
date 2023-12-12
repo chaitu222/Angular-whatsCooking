@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback Form</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+   
+  </style>
+</head>
+
+<body>
+<div class="container" style="color: white;">
+    <h2>Welcome to Admin Dashboard</h2>
+    <button class="btn btn-primary" style="margin-right: 55%;" [routerLink]="['/adminhome']" >Go to Home</button><br><br>
+
+    <h3>Add Recipe</h3>
+    <div>
+      <label>Name:</label>
+      <input [(ngModel)]="newRecipe.name" class="form-control" placeholder="Recipe Name">
+    </div>
+    <div>
+      <label>Details:</label>
+      <textarea [(ngModel)]="newRecipe.details" class="form-control" placeholder="Recipe Details"></textarea>
+    </div>
+    <div>
+      <label>Ingredients:</label>
+      <textarea [(ngModel)]="newRecipe.ingredients" class="form-control" placeholder="Ingredient 1, Ingredient 2, ..."></textarea>
+    </div>
+    <div>
+      <label>Cooking Steps:</label>
+      <textarea [(ngModel)]="newRecipe.cookingSteps" class="form-control" placeholder="Step 1, Step 2, ..."></textarea>
+    </div><br>
+    <button class="btn btn-primary" (click)="addRecipe()">Add Recipe</button>
+ 
+    <h3>Recipes</h3>
+    <div *ngFor="let recipe of recipes">
+      <div>{{ recipe.name }}</div>
+      <div>{{ recipe.details }}</div>
+      <div>{{ isArray(recipe.ingredients) ? recipe.ingredients.join(', ') : recipe.ingredients }}</div>
+      <div>{{ isArray(recipe.cookingSteps) ? recipe.cookingSteps.join(', ') : recipe.cookingSteps}}</div>
+      <div>
+        <button class="btn btn-danger" (click)="removeRecipe(recipe._id)">Remove</button>
+        
+        <button  class="btn btn-primary" (click)="editRecipe(recipe._id)">Edit</button>
+      </div>
+      
+
+      <!-- <div *ngFor="let recipe of recipes">
+        <button (click)="toggleRecipe(recipe._id)">
+          {{ recipe.enabled }} enable
+        </button>
+      </div> -->
+
+      
+    </div>
+ 
+    <h3>Edit Recipe</h3>
+    <div>
+      <label>Name:</label>
+      <input [(ngModel)]="editedRecipe.name" class="form-control" placeholder="Recipe Name">
+    </div>
+    <div>
+      <label>Details:</label>
+      <textarea [(ngModel)]="editedRecipe.details" class="form-control" placeholder="Recipe Details"></textarea>
+    </div>
+    <div>
+      <label>Ingredients:</label>
+      <textarea [(ngModel)]="editedRecipe.ingredients" class="form-control" placeholder="Ingredient 1, Ingredient 2, ..."></textarea>
+    </div>
+    <div>
+      <label>Cooking Steps:</label>
+      <textarea [(ngModel)]="editedRecipe.cookingSteps" class="form-control" placeholder="Step 1, Step 2, ..."></textarea>
+    </div><br>
+    <button class="btn btn-primary"  (click)="saveEditedRecipe()">Save Changes</button>
+  </div>
+
+ 
+</body>
+ 
